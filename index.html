@@ -1,28 +1,393 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Hank Quinlan, Horrible Cop</title>
-	</head>
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Hank Quinlan!</h1>
-				<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
-        		<li><a href="https://github.com/hankquinlan">github.com/hankquinlan</a></li>
-			</ul>
-		</footer>
-	</body>
+<head>
+<meta charset="utf-8" />
+<title>Jesus and Cherita</title>
+<!--Reset Files for fixing cross browser issue-->
+<link rel="stylesheet" href="css/reset.css" />
+<!--[if lt IE 9]>
+  <script src="./assets/javascripts/html5.js"></script>
+<![endif]-->
+<!--960 grid system-->
+<!--[if (gt IE 8) | (IEMobile)]><!-->
+  <link rel="stylesheet" href="css/grid.css" />
+<!--<![endif]-->
+<!--[if (lt IE 9) & (!IEMobile)]>
+  <link rel="stylesheet" href="./assets/stylesheets/ie.css" />
+<![endif]-->
+<!--===================ALL CSS RELATED THIS THEME IS IN WEDDING.CSS=======================-->
+<link rel="stylesheet" href="css/wedding.css?v=1.1" />
+<!--===================GOOGLE WEB FONTS=======================-->
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700">
+<!--===================MORNERNIZER TO SUPPORT OLD BROWSERS=======================-->
+<script src="js/modernizr.js"></script>
+
+<!--===================FLEX SLIDER STARTS=======================-->
+
+<link rel="stylesheet" href="css/flexslider.css" />
+<!--If you wish you can use from Google Apis also-->
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>-->
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<script type="text/javascript">
+  $(window).load(function() {
+     $('.flexslider').flexslider({
+        animation: "slide"
+      });
+  });
+</script>
+
+<!--===================FLEX SLIDER ENDS=======================-->
+
+<!--=============================FANCY BOX STARTS================================-->
+
+<!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="js/jquery.mousewheel-3.0.6.pack.js"></script>
+
+<!-- Add fancyBox main JS and CSS files -->
+<script type="text/javascript" src="js/jquery.fancybox.js?v=2.1.4"></script>
+<link rel="stylesheet" type="text/css" href="css/jquery.fancybox.css?v=2.1.4" media="screen" />
+<script type="text/javascript">
+		$(document).ready(function() {
+
+			$('.fancybox').fancybox({
+    helpers : {
+        overlay : {
+            locked : false
+        }
+    }
+});
+			
+			});
+</script>
+
+<!--============================FANCY BOX ENDS========================================-->
+
+<!--ONE PAGE SCROLLING SCRIPT CAN BE FOUND AT THE BOTTOM-->
+
+
+
+<!--============================RSVP FORM VALIDATION STARTS========================================-->
+
+<script type="text/javascript" language="javascript">
+
+		function FormValidate()
+	{
+		if (trim(window.document.contactForm.name.value) == "") 
+		{
+			alert ("Please Enter Name");
+			window.document.contactForm.name.focus();
+			return false;
+		}
+		if (trim(window.document.contactForm.email.value) == "") 
+		{
+			alert ("Please Enter Email");
+			window.document.contactForm.email.focus();
+			return false;
+		}
+		else
+		{
+				var curEmail = document.getElementById("email").value;
+				curEmail 	 = trim(curEmail);
+							
+				if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/.test(curEmail))
+				{
+					alert("Invalid Email");
+					document.getElementById("email").focus();
+					return false;
+				}
+		}
+		if (trim(window.document.contactForm.yesno.value) == "") 
+		{
+			alert ("Are you attending?");
+			window.document.contactForm.yesno.focus();
+			return false;
+		}
+		
+		
+	}
+	
+	function trim(str, chars) 
+		{
+			return ltrim(rtrim(str, chars), chars);
+		}
+		
+		function ltrim(str, chars)
+		{
+			chars = chars || "\\s";
+			return str.replace(new RegExp("^[" + chars + "]+", "g"), "");
+		}
+		function rtrim(str, chars)
+		{
+			chars = chars || "\\s";
+			return str.replace(new RegExp("[" + chars + "]+$", "g"), "");
+		}	
+		
+		
+		
+	function gup( name ) {
+    name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+    var regexS = "[\\?&]"+name+"=([^&#]*)";
+    var regex = new RegExp( regexS );
+    var results = regex.exec( window.location.href );
+    if( results == null )
+        return "";
+    else
+        return results[1];
+}
+var rsvp = gup("rsvp"); 
+		
+		if (rsvp != '') {
+		alert ("RSVP Form Submitted");
+		window.location = 'index.html';
+		 }
+	
+	
+</script>
+
+<!--============================RSVP FORM VALIDATION ENDS========================================-->
+
+
+
+</head>
+
+<body>
+
+<!--============================FIXED NAV STARTS========================================-->
+
+<nav class="FixedNav">
+  <div class="grid-container">
+  <div class="LeftNav visible-desktop"> <a href="#home" class="active">Home</a> <a href="#story">OUR STORY</a> <a href="#wedding">WEDDING</a> <a href="#gallery">PHOTOS</a> </div>
+  <div class="Logo"><a href="#home"><img src="images/Logo2.png" alt="logo" /></a></div>
+  <div class="RightNav visible-desktop"> <a href="#rsvp">RSVP</a> <a href="#wishes">WISHES</a> <a href="#registry">REGISTRY</a> <a href="#contact">CONTACT US</a> </div>
+  </div>
+</nav>
+
+<!--============================FIXED NAV ENDS========================================--> 
+
+<!--============================CONTAINER STARTS========================================-->
+
+<div class="grid-container wrapper"> 
+  
+  <!--============================SLIDER STARTS========================================-->
+  
+  <section class="slider" id="home">
+    <div class="flexslider">
+      <ul class="slides">
+        <li> <img src="images/gallery/image1.jpg" alt="" /> </li>
+        <li> <img src="images/gallery/image2.jpg" alt="" /> </li>
+        <li> <img src="images/gallery/image3.jpg" alt="" /> </li>
+      </ul>
+    </div>
+  </section>
+  
+  <!--============================SLIDER ENDS========================================--> 
+  
+  <!--  ========================STORY STARTS================================-->
+  
+  <section id="story">
+    <div class="grid-100 mobile-grid-100 SectionHead">
+      <h1><span></span>Our Story<span></span></h1>
+    </div>
+    <div class="grid-50 mobile-grid-100 storyLeft"> <img src="images/groom2.jpg" alt="groom" class="mobile-grid-40" />
+      <h2 class="mobile-grid-100">Jesus</h2>
+      <p class="mobile-grid-100"> Jesus is originally from the south side of Chicago. He is a graduate of the University of Illinois, Urbana-Champaign where he also met his college sweetheart and new fiance, Cherita! Jesus, commonly referred to as Zeus, enjoys the three B's: Books, Beer, and Burgers. He enjoys exploring the city for all three things with his love by his side. Jesus is now ready to write the next chapter of his book as he marries his college sweetheart, Cherry!<br>
+        <a href="https://www.facebook.com/jesus.marquez?fref=ts">Facebook</a> </p>
+    </div>
+    <div class="grid-50 mobile-grid-100 storyRight"> <img src="images/bride1.jpg" alt="groom" class="mobile-grid-40" />
+      <h2 class="mobile-grid-100">Cherita</h2>
+      <p class="mobile-grid-100"> Cherita is a middle school science teacher in Chicago. She also lives in Chicago and enjoys discovering the three C's: coffee shops, crafts, and concerts! She loves visiting with her family in her hometown of Naperville. After she met Jesus her freshman year in college, she realized that she loved his sense of adventure and patience the most. She can't believe she is marrying her college sweetheart and turning the page to a new chapter in her life! <br>
+         <a href="https://www.facebook.com/cherita.srirama">Facebook</a> </p>
+    </div>
+  </section>
+  
+  <!--  ========================STORY ENDS================================--> 
+  
+  <!--  ========================WEDDING STARTS================================-->
+  
+  <section id="wedding">
+    <div class="grid-100 mobile-grid-100 SectionHead">
+      <h1><span></span>The Wedding<span></span></h1>
+    </div>
+    <div class="grid-60 mobile-grid-100 prefix-20 suffix-20"> <span class="cnt"><img src="images/save-date.png" alt="save the date" /></span>
+      <h3>May 23, 2015</h3>
+      <span class="at cnt"><img src="images/at.png" alt="at" /></span>
+      <h2>Chicago Marriott Naperville</h2>
+      <p>1801 North Naper Boulevard, Naperville, Illinois 60563 USA</p>
+      <span class="cnt"> <a href="https://www.google.com/maps/place/Chicago+Marriott+Naperville/@41.803613,-88.121545,17z/data=!3m2!4b1!5s0x880e56f2e6c8404f:0xbb811745a60116f0!4m2!3m1!1s0x880e56f288e7c751:0x1fb5dc6273f63c77" class="Button"> Get Directions </a></span> 
+      <span class="cnt"> <a href="http://www.marriott.com/meeting-event-hotels/group-corporate-travel/groupCorp.mi?resLinkData=Srirama/Marquez%20Wedding%5Echimn%60sqwsqwa%6099.00%60USD%60false%605/21/15%605/24/15%605/2/15&app=resvlink&stop_mobi=yes" class="Button"> Hotel Reservation </a></span>
+        </div>
+  </section>
+  
+  <!--  ========================WEDDING ENDS================================--> 
+  
+  <!--  ========================GALLERY STARTS================================-->
+  
+  <section id="gallery">
+    <div class="grid-100 mobile-grid-100 SectionHead">
+      <h1><span></span>Photo Gallery<span></span></h1>
+    </div>
+    <div class="grid-100 mobile-grid-100">
+      <ul>
+        <li class="grid-33 mobile-grid-50"><a class="fancybox" href="images/gallery/photos/image4.jpg" data-fancybox-group="gallery" title="Wedding photos"><img src="images/gallery/thumb/image4thumb.jpg" alt="" /></a></li>
+        <li class="grid-33 mobile-grid-50"><a class="fancybox" href="images/gallery/photos/image5.jpg" data-fancybox-group="gallery" title="Wedding photos"><img src="images/gallery/thumb/image5thumb.jpg" alt="" /></a></li>
+        <li class="grid-33 mobile-grid-50"><a class="fancybox" href="images/gallery/photos/image6.jpg" data-fancybox-group="gallery" title="Wedding photos"><img src="images/gallery/thumb/image6thumb.jpg" alt="" /></a></li>
+        <li class="grid-33 mobile-grid-50"><a class="fancybox" href="images/gallery/photos/image7.jpg" data-fancybox-group="gallery" title="Wedding photos"><img src="images/gallery/thumb/image7thumb.jpg" alt="" /></a></li>
+        <li class="grid-33 mobile-grid-50"><a class="fancybox" href="images/gallery/photos/image8.jpg" data-fancybox-group="gallery" title="Wedding photos"><img src="images/gallery/thumb/image8thumb.jpg" alt="" /></a></li>
+        <li class="grid-33 mobile-grid-50"><a class="fancybox" href="images/gallery/photos/image9.jpg" data-fancybox-group="gallery" title="Wedding photos"><img src="images/gallery/thumb/image9thumb.jpg" alt="" /></a></li>
+        <li class="grid-33 mobile-grid-50"><a class="fancybox" href="images/gallery/photos/bigimage2.jpg" data-fancybox-group="gallery" title="Wedding photos"><img src="images/gallery/thumb/bigimage2thumb.jpg" alt="" /></a></li>
+        <li class="grid-33 mobile-grid-50"><a class="fancybox" href="images/gallery/photos/image11.jpg" data-fancybox-group="gallery" title="Wedding photos"><img src="images/gallery/thumb/image11thumb.jpg" alt="" /></a></li>
+        <li class="grid-33 mobile-grid-50"><a class="fancybox" href="images/gallery/photos/image12.jpg" data-fancybox-group="gallery" title="Wedding photos"><img src="images/gallery/thumb/image12thumb.jpg" alt="" /></a></li>
+      </ul>
+    </div>
+  </section>
+  
+  <!--  ========================GALLERY ENDS================================--> 
+  
+  <!--  ========================RSVP STARTS================================-->
+  
+  <section id="rsvp">
+    <div class="grid-100 mobile-grid-100 SectionHead">
+      <h1><span></span>RSVP<span></span></h1>
+    </div>
+    
+    <form action="send_rsvp.php" id="contactForm" name="contactForm" style="margin:0; padding:0 " method="post" onSubmit="return FormValidate();">
+     
+    <div class="grid-50 mobile-grid-100 prefix-25 suffix-25">
+      <div class="grid-50 mobile-grid-100">
+        <label for="name">Your name</label>
+        <input type="text" name="name" id="name" required>
+      </div>
+      <div class="grid-50 mobile-grid-100">
+        <label for="email">Email Address</label>
+        <input type="email" name="email" id="email" required>
+      </div>
+      <div class="grid-100 mobile-grid-100 RsvpFull">
+        <label for="yesno">Will you be joining us?</label>
+        <select name="yesno" id="yesno" required>
+        <option value="">Choose an option</option>
+          <option value="Yes, Absolutely">Yes, Absolutely</option>
+          <option value="May be, Not Sure">Maybe, Not Sure</option>
+          <option value="Sorry, I cannot come">Sorry, I cannot come</option>
+        </select>
+      </div>
+      
+      
+      
+      
+      <div class="grid-100 mobile-grid-100 no-margin text-center"> 
+      <span class="cnt"> 
+  
+              <input type="submit" name="submit" value="Submit RSVP" id="submit" class="Button" />
+      
+      </span>
+      
+      </div>
+    </div>
+    
+     </form>
+
+    
+    
+  </section>
+  
+  <!--  ========================RSVP ENDS================================--> 
+  
+  <!--  ========================WISHES STARTS================================-->
+  
+  <section id="wishes">
+    <div class="grid-100 mobile-grid-100 SectionHead">
+      <h1><span></span>WISHES<span></span></h1>
+    </div>
+    <div class="grid-60 prefix-20 suffix-20">
+    <!-- begin htmlcommentbox.com -->
+ <div id="HCB_comment_box"><a href="http://www.htmlcommentbox.com">HTML Comment Box</a> is loading comments...</div>
+ <script type="text/javascript" id="hcb"> /*<!--*/ if(!window.hcb_user){hcb_user={};} hcb_user.PAGE="jesusandcherita.com";(function(){var s=document.createElement("script"), l=(""+window.location).replace(/'/g,"%27") || hcb_user.PAGE, h="//www.htmlcommentbox.com";s.setAttribute("type","text/javascript");s.setAttribute("src", h+"/jread?page="+encodeURIComponent(l).replace("+","%2B")+"&opts=470&num=5");if (typeof s!="undefined") document.getElementsByTagName("head")[0].appendChild(s);})(); /*-->*/ </script>
+<!-- end htmlcommentbox.com -->
+      <blockquote class="blockleft">
+        <p> 2 chainz </p>
+        <span>- Johnathan Doe</span> </blockquote>
+      <blockquote class="blockRight">
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis risus et libero lacinia pulvinar. Nullam pellentesque hendrerit eros </p>
+        <span>- Johnathan Doe</span> </blockquote>
+      <blockquote class="blockleft">
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis risus et libero lacinia pulvinar. Nullam pellentesque hendrerit eros </p>
+        <span>- Johnathan Doe</span> </blockquote>
+      <blockquote class="blockRight">
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean convallis risus et libero lacinia pulvinar. Nullam pellentesque hendrerit eros </p>
+        <span>- Johnathan Doe</span> </blockquote>
+    </div>
+  </section>
+  
+  <!--  ========================WISHES ENDS================================--> 
+  
+  <!--  ========================REGISTRY STARTS================================-->
+  
+  <section id="registry">
+    <div class="grid-100 mobile-grid-100 SectionHead">
+      <h1><span></span>REGISTRY<span></span></h1>
+    </div>
+    <div class="grid-80 mobile-grid-100 prefix-10 suffix-10">
+      <h4>No boxed gifts aside from the registry please.</h4>
+      <p> <a href="http://www1.macys.com/registry/wedding/guest/?registryId=6231528"><img src="images/macylogo1.jpg" width="236" height="82" alt=""></a> <a href="http://www.crateandbarrel.com/Gift-Registry/Cherita-Srirama-and-Jesus-Marquez/r5226567"><img src="images/cblogo.jpg" width="236" height="82" alt=""></a> </p>
+      
+    </div>
+  </section>
+  
+  <!--  ========================REGISTRY ENDS================================--> 
+  
+  <!--  ========================CONTACT US STARTS================================-->
+  
+  <section id="contact">
+    <div class="grid-100 mobile-grid-100 SectionHead">
+      <h1><span></span>CONTACT US<span></span></h1>
+    </div>
+    <div class="grid-50 mobile-grid-100 prefix-25 suffix-25"> <span class="kit"><img src="images/keep-touch.png" width="120" height="27" alt=""></span>
+      <p>808 Spring Creek Circle<br>
+        Naperville, Illinois United States of America, 60565<br>
+        <br>
+        <em> cherita.srirama@gmail.com & jsmr64@gmail.com<br>
+        +1 630 723 4764 & 1-708-606-3742</em> </p>
+      
+      <footer>
+        <p> Copyright Shashanka Inc. <a href="#">Jesus & Cherita</a> |  Images by <a href="http://www.studiofinch.com/" target="_blank">studiofinch.com</a></p>
+      </footer>
+    </div>
+  </section>
+  
+  <!--  ========================CONTACT US ENDS================================--> 
+  
+</div>
+
+<!--============================CONTAINER ENDS========================================--> 
+
+<!--============================ONE PAGE SCROLLING SCRIPTS STARTS========================================--> 
+
+
+<script type="text/javascript" src="js/jquery.easing.1.2.js"></script> 
+<script type="text/javascript">
+            $(function() {
+                $('.FixedNav a').bind('click',function(event){
+                    var $anchor = $(this);
+					$('.FixedNav a').removeClass('active');
+                    $anchor.addClass('active');
+					
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top - 50
+                    }, 1500,'easeInOutExpo');
+                    /*
+                    if you don't want to use the easing effects:
+                    $('html, body').stop().animate({
+                        scrollTop: $($anchor.attr('href')).offset().top
+                    }, 1000);
+                    */
+                    event.preventDefault();
+                });
+            });
+        </script>
+        
+<!--============================ONE PAGE SCROLLING SCRIPTS ENDS========================================--> 
+
+        
+</body>
 </html>
